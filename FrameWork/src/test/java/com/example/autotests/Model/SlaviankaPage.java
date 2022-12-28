@@ -9,6 +9,7 @@ import static java.lang.Thread.sleep;
 public class SlaviankaPage {
 
     public final String URL = "https://slavianka.by/";
+    public final SelenideElement header = $x("//h1");
     public final SelenideElement searchbutton = $x("/html/body/div[1]/div[1]/div/div[6]/div[2]");
     public final SelenideElement searchline = $x("/html/body/div[7]/div[3]/div[2]/form/div[1]/input");
     public final SelenideElement acceptbutton = $x("/html/body/div[7]/div[3]/div[2]/form/p/input");

@@ -21,68 +21,75 @@ public class MyTestClass{
     }
 
     @Test
-    public void SearchPaltoTest() throws InterruptedException {
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.setSearchLineToValues();
+    public void SearchCoatTest() throws InterruptedException {
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.setSearchLineToValues();
+        assertEquals("Результаты поиска \"пальто\". Найдено 108", sPage.header.getText(), "sho");
     }
     @Test
     public void SortManClothesByDate()
     {
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.sortBySomething(superLamaPage.datesort);
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.sortBySomething(sPage.datesort);
+        assertEquals("ДЛЯ МУЖЧИН", sPage.header.getText());
     }
     @Test
     public void SortManClothesByPrice1()
     {
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.sortBySomething(superLamaPage.pricesort1);
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.sortBySomething(sPage.pricesort1);
+        assertEquals("ДЛЯ МУЖЧИН", sPage.header.getText());
     }
     @Test
     public void SortManClothesByPrice2()
     {
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.sortBySomething(superLamaPage.pricesort2);
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.sortBySomething(sPage.pricesort2);
+        assertEquals("ДЛЯ МУЖЧИН", sPage.header.getText());
     }
     @Test
     public void CheckLastNews()
     {
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.checkLastNews();
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.checkLastNews();
+        assertEquals("ПРЕЗЕНТАЦИЯ КОЛЛЕКЦИИ ОДЕЖДЫ ПРОЕКТА НА КУЛЬТУРНО-СПОРТИВНОМ ФЕСТИВАЛЕ «ВЫТОКI. КРОК ДА АЛIМПУ»", sPage.header.getText());
     }
     @Test
     public void LoginProfile() {
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.loginProfile();
-        superLamaPage.clickOnElement(superLamaPage.profilebutton);
-        sleep(15000);
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.loginProfile();
+        sPage.clickOnElement(sPage.profilebutton);
+        sleep(5000);
     }
     @Test
     public void ExitProfile(){
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.loginProfile();
-        superLamaPage.clickOnElement(superLamaPage.profilebutton);
-        superLamaPage.clickOnElement(superLamaPage.exitprofilebutton);
-        superLamaPage.clickOnElement(superLamaPage.profilebutton);
-        sleep(15000);
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.loginProfile();
+        sPage.clickOnElement(sPage.profilebutton);
+        sPage.clickOnElement(sPage.exitprofilebutton);
+        sPage.clickOnElement(sPage.profilebutton);
+        sleep(5000);
     }
     @Test
     public void CheckLocation(){
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.checkLocation();
-        sleep(15000);
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.checkLocation();
+        assertEquals("МАГАЗИНЫ", sPage.header.getText());
+        sleep(5000);
     }
     @Test
     public void AddToBasket(){
-        SlaviankaPage superLamaPage= new SlaviankaPage();
-        superLamaPage.openPage();
-        superLamaPage.addToBasket();
+        SlaviankaPage sPage= new SlaviankaPage();
+        sPage.openPage();
+        sPage.addToBasket();
+        assertEquals("ПАЛЬТО МУЖСКОЕ", sPage.header.getText());
     }
 }
